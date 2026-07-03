@@ -713,9 +713,9 @@ a {
     flex-direction: column;
   }
 
-  .site-header:focus-within .site-nav {
-    display: flex;
-  }
+  .site-nav.open {
+  display: flex;
+}
 
   .split,
   .contact-grid {
