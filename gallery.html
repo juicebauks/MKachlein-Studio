@@ -1,112 +1,310 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Work Gallery | Mark Kachlein Metal Art</title>
+    <meta
+      content="Browse contemporary welded metal sculptures by Mark Kachlein. View available works, past collections, and fine art created at MK Studio."
+      name="description"
+    />
+    <meta
+      content="Mark Kachlein, MK Studio, metal artist, metal sculpture, welded sculpture, contemporary sculpture, steel art, fine art, commissions"
+      name="keywords"
+    />
+    <meta content="Mark Kachlein" name="author" />
+    <link href="https://use.typekit.net/ghw1gjo.css" rel="stylesheet" />
+    <link href="https://mkachleinstudio.com/gallery.html" rel="canonical" />
+    <link href="assets/icons/Favicon-01.svg" rel="icon" type="image/svg+xml" />
+    <link href="styles.css" rel="stylesheet" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      [data-reveal] {
+        opacity: 0;
+        transition-property: opacity, transform;
+        transition-duration: var(--reveal-duration, 1.5s);
+        transition-delay: var(--reveal-delay, 0s);
+        transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
 
-  <title>Work Gallery | Mark Kachlein Metal Art</title>
+      [data-reveal="left"] {
+        transform: translateX(-70px);
+      }
 
-  <meta name="description"
-    content="Browse contemporary welded metal sculptures by Mark Kachlein. View available works, past collections, and fine art created at MK Studio.">
+      [data-reveal="right"] {
+        transform: translateX(70px);
+      }
 
-  <meta name="keywords"
-    content="Mark Kachlein, MK Studio, metal artist, metal sculpture, welded sculpture, contemporary sculpture, steel art, fine art, commissions">
+      [data-reveal="up"] {
+        transform: translateY(35px);
+      }
 
-  <meta name="author" content="Mark Kachlein">
+      [data-reveal="down"] {
+        transform: translateY(-35px);
+      }
 
-  <link rel="canonical" href="https://mkachleinstudio.com/">
+      [data-reveal="fade"] {
+        transform: none;
+      }
 
-  <link rel="icon" href="assets/icons/Favicon-01.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-</head>
+      [data-reveal].is-visible {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
 
-<body>
-  <header class="site-header">
-    <a class="logo" href="index.html"><img src="assets/images/mk-logo-white.png" alt="MK Studio"></a>
-    <button class="nav-toggle" aria-label="Open navigation">☰</button>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <div class="dropdown">
-        <a href="gallery.html">Gallery <span>⌄</span></a>
-        <div class="dropdown-menu">
-          <a href="gallery.html">Featured</a>
-          <a href="archive.html">Archive</a>
+      @media (prefers-reduced-motion: reduce) {
+        [data-reveal] {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html">
+        <img alt="MK Studio" src="assets/images/mk-logo-white.png" />
+      </a>
+      <button aria-label="Open navigation" class="nav-toggle">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="gallery.html">Gallery <span>⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="gallery.html">Featured</a>
+            <a href="archive.html">Archive</a>
+          </div>
         </div>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero-gif">
+        <img
+          alt="MK Studio Animation"
+          src="assets/images/gallery-animation.gif"
+          data-reveal="fade"
+        />
       </div>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <div class="hero-gif">
-      <img src="assets/images/gallery-animation.gif" alt="MK Studio Animation">
-    </div>
-    <div class="tabs"><a class="active" href="gallery.html"
-        style="font-weight: 400; text-decoration: underline; text-underline-offset: 10px; text-decoration-thickness: 2px;">Featured</a><a
-        href="archive.html" style="font-weight: 400;">Archive</a></div>
-    <section class="featured-list">
-      <article class="feature"><a href="floral-shield-series.html"><img src="assets/images/featured-prayer.jpg" alt="">
-          <p style="font-style: oblique; color: rgb(141, 141, 141);">Prayer #1 (Shield Series)</p>
-        </a>
-      </article>
-      <article class="feature feature-mosaic"><a href="skull-series.html">
-          <div class="mosaic-frame">
-            <div class="mosaic-main">
-              <img src="assets/images/featured-skull-detail.jpg" alt="">
+
+      <div class="tabs" data-reveal="up">
+        <a
+          class="active"
+          href="gallery.html"
+          style="
+            font-weight: 400;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            text-decoration-thickness: 2px;
+          "
+          >Featured</a
+        ><a href="archive.html" style="font-weight: 400">Archive</a>
+      </div>
+
+      <section class="featured-list">
+        <article class="feature">
+          <a href="floral-shield-series.html">
+            <img
+              alt=""
+              src="assets/images/featured-prayer.webp"
+              data-reveal="fade"
+              style="--reveal-duration: 1.4s"
+            />
+            <p
+              data-reveal="up"
+              style="font-style: oblique; color: rgb(141, 141, 141)"
+            >
+              Prayer #1 (Shield Series)
+            </p>
+          </a>
+        </article>
+
+        <article class="feature feature-mosaic">
+          <a href="skull-series.html">
+            <div class="mosaic-frame">
+              <div class="mosaic-main">
+                <img
+                  alt=""
+                  src="assets/images/featured-skull-detail.webp"
+                  data-reveal="left"
+                />
+              </div>
+              <div class="mosaic-side">
+                <img
+                  alt=""
+                  src="assets/images/featured-skull-main.webp"
+                  data-reveal="right"
+                  style="--reveal-delay: 0.1s"
+                />
+                <img
+                  alt=""
+                  src="assets/images/featured-skull-close.webp"
+                  data-reveal="right"
+                  style="--reveal-delay: 0.2s"
+                />
+              </div>
             </div>
+            <p
+              data-reveal="up"
+              style="font-style: oblique; color: rgb(141, 141, 141)"
+            >
+              Buffalo Skull (Skull Series)
+            </p>
+          </a>
+        </article>
 
-            <div class="mosaic-side">
-              <img src="assets/images/featured-skull-main.png" alt="">
-              <img src="assets/images/featured-skull-close.png" alt="">
+        <article class="feature">
+          <img
+            alt=""
+            src="assets/images/featured-wall-piece.webp"
+            data-reveal="left"
+          />
+          <p
+            data-reveal="up"
+            style="font-style: oblique; color: rgb(141, 141, 141)"
+          >
+            Love of the Game
+          </p>
+        </article>
+
+        <article class="feature">
+          <a href="flag-series.html">
+            <img
+              alt=""
+              src="assets/images/featured-flag.webp"
+              data-reveal="right"
+            />
+            <p
+              data-reveal="up"
+              style="font-style: oblique; color: rgb(141, 141, 141)"
+            >
+              Made in America (Flag Series)
+            </p>
+          </a>
+        </article>
+
+        <article class="feature">
+          <img
+            alt=""
+            src="assets/images/featured-stone-leaf.webp"
+            data-reveal="left"
+          />
+          <p
+            data-reveal="up"
+            style="font-style: oblique; color: rgb(141, 141, 141)"
+          >
+            I Know You Are but What Am I?
+          </p>
+        </article>
+
+        <article class="feature feature-mosaic">
+          <a href="mask-series.html">
+            <div class="mosaic-frame">
+              <div class="mosaic-main">
+                <img
+                  alt=""
+                  src="assets/images/featured-mask.webp"
+                  data-reveal="left"
+                />
+              </div>
+              <div class="mosaic-side">
+                <img
+                  alt=""
+                  src="assets/images/featured-mask-detail-1.webp"
+                  data-reveal="right"
+                  style="--reveal-delay: 0.1s"
+                />
+                <img
+                  alt=""
+                  src="assets/images/featured-mask-detail-2.webp"
+                  data-reveal="right"
+                  style="--reveal-delay: 0.2s"
+                />
+              </div>
             </div>
-          </div>
+            <p
+              data-reveal="up"
+              style="font-style: oblique; color: rgb(141, 141, 141)"
+            >
+              Anticipation (Mask Series)
+            </p>
+          </a>
+        </article>
 
-          <p style="font-style: oblique; color: rgb(141, 141, 141);">Buffalo Skull (Skull Series)</p>
-        </a>
-      </article>
-      <article class="feature"><img src="assets/images/featured-wall-piece.jpg" alt="">
-        <p style="font-style: oblique; color: rgb(141, 141, 141);">Love of the Game</p>
-      </article>
-      <article class="feature"><a href="flag-series.html"><img src="assets/images/featured-flag.png" alt="">
-          <p style="font-style: oblique; color: rgb(141, 141, 141);">Made in America (Flag Series)</p>
-        </a>
-      </article>
-      <article class="feature feature">
-        <img src="assets/images/featured-stone-leaf.jpg" alt="">
+        <article class="feature">
+          <a href="mask-series.html">
+            <img
+              alt=""
+              src="assets/images/featured-northwind.webp"
+              data-reveal="right"
+            />
+            <p
+              data-reveal="up"
+              style="font-style: oblique; color: rgb(141, 141, 141)"
+            >
+              North Wind (Mask Series)
+            </p>
+          </a>
+        </article>
 
-        <p style="font-style: oblique; color: rgb(141, 141, 141);">I Know You Are but What Am I?</p>
-      </article>
+        <article class="feature">
+          <img
+            alt=""
+            src="assets/images/featured-smith.webp"
+            data-reveal="left"
+          />
+          <p
+            data-reveal="up"
+            style="font-style: oblique; color: rgb(141, 141, 141)"
+          >
+            Silent Reflection
+          </p>
+        </article>
+      </section>
+    </main>
 
-      <article class="feature feature-mosaic"><a href="mask-series.html">
-          <div class="mosaic-frame">
-            <div class="mosaic-main">
-              <img src="assets/images/featured-mask.jpg" alt="">
-            </div>
+    <footer class="site-footer">
+      <img alt="MK Studio" src="assets/images/mk-logo-white.png" />
+      <nav>
+        <a href="index.html">HOME</a><a href="gallery.html">GALLERY</a
+        ><a href="contact.html">CONTACT</a>
+      </nav>
+      <p><strong>Contact:</strong> mkachlein1527@msn.com</p>
+      <p>Copyright © 2025 MKstudio. All Rights Reserved.</p>
+    </footer>
 
-            <div class="mosaic-side">
-              <img src="assets/images/featured-mask-detail-1.jpg" alt="">
-              <img src="assets/images/featured-mask-detail-2.jpg" alt="">
-            </div>
-          </div>
+    <script>
+      (() => {
+        if (document.body.classList.contains("archive-page")) return;
 
-          <p style="font-style: oblique; color: rgb(141, 141, 141);">Anticipation (Mask Series)</p>
-        </a>
-      </article>
-      <article class="feature"><a href="mask-series.html"><img src="assets/images/featured-northwind.jpg" alt="">
-          <p style="font-style: oblique; color: rgb(141, 141, 141);">North Wind (Mask Series)</p>
-        </a>
-      </article>
-      <article class="feature"><img src="assets/images/featured-smith.png" alt="">
-        <p style="font-style: oblique; color: rgb(141, 141, 141);">Silent Reflection</p>
-      </article>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <img src="assets/images/mk-logo-white.png" alt="MK Studio">
-    <nav><a href="index.html">HOME</a><a href="gallery.html">GALLERY</a><a href="contact.html">CONTACT</a></nav>
-    <p><strong>Contact:</strong> mkachlein1527@msn.com</p>
-    <p>Copyright © 2025 MKstudio. All Rights Reserved.</p>
-  </footer>
-</body>
+        const revealItems = document.querySelectorAll("[data-reveal]");
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
 
+        if (reduceMotion) {
+          revealItems.forEach((item) => item.classList.add("is-visible"));
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+        );
+
+        revealItems.forEach((item) => observer.observe(item));
+      })();
+    </script>
+  </body>
 </html>
