@@ -1,30 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
   <title>Mark Kachlein | Bend Oregon Metal Sculpture Artist</title>
+  <meta
+    content="Explore the handcrafted welded sculptures of Mark Kachlein. Discover contemporary metal artwork, gallery collections, commissions, and the creative process behind MK Studio."
+    name="description" />
+  <meta
+    content="Mark Kachlein, MK Studio, metal artist, metal sculpture, welded sculpture, contemporary sculpture, steel art, fine art, commissions"
+    name="keywords" />
+  <meta content="Mark Kachlein" name="author" />
+  <link href="https://use.typekit.net/ghw1gjo.css" rel="stylesheet" />
+  <link href="https://mkachleinstudio.com/" rel="canonical" />
+  <link href="assets/icons/Favicon-01.svg" rel="icon" type="image/svg+xml" />
+  <link href="styles.css" rel="stylesheet" />
+  <style>
+    [data-reveal] {
+      opacity: 0;
+      transition-property: opacity, transform;
+      transition-duration: var(--reveal-duration, 0.9s);
+      transition-delay: var(--reveal-delay, 0s);
+      transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
 
-  <meta name="description"
-    content="Explore the handcrafted welded sculptures of Mark Kachlein. Discover contemporary metal artwork, gallery collections, commissions, and the creative process behind MK Studio.">
+    [data-reveal="left"] {
+      transform: translateX(-50px);
+    }
 
-  <meta name="keywords"
-    content="Mark Kachlein, MK Studio, metal artist, metal sculpture, welded sculpture, contemporary sculpture, steel art, fine art, commissions">
+    [data-reveal="right"] {
+      transform: translateX(50px);
+    }
 
-  <meta name="author" content="Mark Kachlein">
+    [data-reveal="up"] {
+      transform: translateY(35px);
+    }
 
-  <link rel="canonical" href="https://mkachleinstudio.com/">
+    [data-reveal="down"] {
+      transform: translateY(-35px);
+    }
 
-  <link rel="icon" href="assets/icons/Favicon-01.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+    [data-reveal="fade"] {
+      transform: none;
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header class="site-header">
-    <a class="logo" href="index.html"><img src="assets/images/mk-logo-white.png" alt="MK Studio"></a>
-    <button class="nav-toggle" aria-label="Open navigation">☰</button>
+    <a class="logo" href="index.html"><img alt="MK Studio" src="assets/images/mk-logo-white.png" /></a>
+    <button aria-label="Open navigation" class="nav-toggle">☰</button>
     <nav class="site-nav">
       <a href="index.html">Home</a>
       <div class="dropdown">
@@ -37,110 +78,161 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-  <section class="hero light" style="--hero:url('assets/images/home-hero.jpg')">
-    <div class="hero-gif">
-      <img src="assets/images/hero-animation.gif" alt="MK Studio Animation">
-    </div>
-
-
-  </section>
-  <section class="section">
-    <div class="container split"><img src="assets/images/layor-gallery.jpg" alt="">
-      <div>
-        <h2>MKACHLEIN STUDIO<br>AT LAYOR ART GALLERY</h2>
-        <p>MKachlein Studio is proud to showcase a selection of hand-forged metal sculptures at Layor Art, a
-          contemporary gallery located in the heart of downtown Bend, Oregon.</p>
-        <p><strong>Located at:</strong><br>1000 NW Wall St Ste 110<br>Bend, OR 97703</p>
+  <main>
+    <section class="hero light" style='--hero: url("assets/images/home-hero.webp")'>
+      <div class="hero-gif">
+        <img alt="MK Studio Animation" data-reveal="fade" src="assets/images/hero-animation.gif"
+          style="--reveal-duration: 1.4s" />
       </div>
-    </div>
-  </section>
-  <section class="section flourish-section center">
-    <div class="container narrow">
-      <div class="logo-collab">
-        <img src="assets/images/mk-logo-dark.png" alt="MK Studio">
-        <span class="collab-x">X</span>
-        <img src="assets/images/flourish-logo.png" alt="Flourish">
-      </div>
-      <p>Floral Shield Series is now on display at Flourish in Tumalo, Oregon. Inspired by the beauty and resilience of
-        the natural world, each piece in this collection blends organic form with sculptural design. Visitors to
-        Flourish can experience these works in person and bring home a one-of-a-kind piece of art, available for
-        purchase directly at the store.</p>
-      <p><a href="floral-shield-series.html"><strong>VIEW THE SERIES</strong></a></p>
-    </div>
-  </section>
-  <section class="section bio">
-    <div class="container bio-layout">
-      <img class="bio-photo" src="assets/images/mark-red.jpg" alt="Mark Kachlein">
-
-      <div class="bio-text">
-        <span class="eyebrow">BIO</span>
-        <h2>MARK<br>KACHLEIN</h2>
-        <p style="color: rgb(141, 141, 141);">I have spent a lifetime exploring the artistic process and have been
-          actively creating artwork for over 30 years. Specializing in stone and steel sculpture, my work reflects a
-          deep appreciation for transformation—elevating raw materials into striking, evocative forms.
-
-          My sculptures have been exhibited and sold through galleries, art auctions, fundraisers, and local business
-          venues. I also create work through private commissions.</p>
-      </div>
-
-      <img class="bio-sketch" src="assets/images/stack-sketch.png" alt="">
-    </div>
-  </section>
-
-  <section class="section light language-section">
-    <div class="container language-layout">
-
-      <img class="language-sketch sketch-left" src="assets/images/form-sketch-left.png" alt="">
-
-      <div class="language-main">
-        <div class="language-heading-mobile">
-          <img class="language-sketch sketch-left-mobile" src="assets/images/form-sketch-left.png" alt="">
-          <h2>The Language<br>of <em>Form</em></h2>
-          <img class="language-sketch sketch-right-mobile" src="assets/images/form-sketch-right.png" alt="">
-        </div>
-
-        <h2 class="language-heading-desktop">The Language<br>of <em>Form</em></h2>
-
-        <p>
-          Since childhood, I’ve been captivated by the challenge of creating three-dimensional forms inspired by my
-          interpretations of the world around me. As a young child, my efforts were pure play, driven by the joy
-          of turning one thing or idea into something else. Later, as I deepened my studies and refined my skills,
-          I realized that my creative process is not just an act of making—it’s a conversation between me, the
-          materials, and the world around me.
-        </p>
-
-        <p>
-          Through this ongoing dialogue, I reinterpret what I observe and feel, offering it back to the world with
-          new hidden layers of meaning, mystery, or humor.
-        </p>
-      </div>
-
-      <img class="language-sketch sketch-right" src="assets/images/form-sketch-right.png" alt="">
-
-
-      <div class="language-bottom">
-        <img class="language-sketch sketch-bottom" src="assets/images/form-sketch-bottom.png" alt="">
-
-        <div class="language-secondary">
-          <p>
-            Today, as a Central Oregon artist specializing in steel and stone sculpture,
-            I draw inspiration from the rugged beauty of the local landscape, the human
-            form, and objects that hold symbolic significance to me. These subjects
-            often ignite my curiosity and spark my creative process. I view my work
-            as an act of elevation—transforming the mundane, the rough, and the simple
-            into something extraordinary, imbued with a sense of mystery and reverence.
+    </section>
+    <section class="section">
+      <div class="container split">
+        <img alt="Bend Oregon Art Gallery" data-reveal="left" src="assets/images/layor-gallery.webp" />
+        <div data-reveal="right">
+          <h2 data-reveal="up">MKACHLEIN STUDIO<br />AT LAYOR ART GALLERY</h2>
+          <p data-reveal="up">
+            MKachlein Studio is proud to showcase a selection of hand-forged
+            metal sculptures at Layor Art, a contemporary gallery located in
+            the heart of downtown Bend, Oregon.
+          </p>
+          <p data-reveal="up">
+            <strong>Located at:</strong><br />1000 NW Wall St Ste 110<br />Bend,
+            OR 97703
           </p>
         </div>
       </div>
-
-    </div>
-  </section>
+    </section>
+    <section class="section flourish-section center">
+      <div class="container narrow">
+        <div class="logo-collab">
+          <img alt="MK Studio" data-reveal="left" src="assets/images/mk-logo-dark.png" />
+          <span class="collab-x" data-reveal="fade" style="--reveal-delay: 0.1s">X</span>
+          <img alt="Flourish" data-reveal="right" src="assets/images/flourish-logo.webp" style="--reveal-delay: 0.2s" />
+        </div>
+        <p data-reveal="up">
+          Floral Shield Series is now on display at Flourish in Tumalo,
+          Oregon. Inspired by the beauty and resilience of the natural world,
+          each piece in this collection blends organic form with sculptural
+          design. Visitors to Flourish can experience these works in person
+          and bring home a one-of-a-kind piece of art, available for purchase
+          directly at the store.
+        </p>
+        <p data-reveal="up" style="--reveal-delay: 0.1s">
+          <a class="learn-more" href="floral-shield-series.html" style="font-weight: 600">VIEW THE SERIES</a>
+        </p>
+      </div>
+    </section>
+    <section class="section bio">
+      <div class="container bio-layout">
+        <img alt="Metalwork Artist Mark Kachlein" class="bio-photo" data-reveal="left"
+          src="assets/images/mark-red.webp" />
+        <div class="bio-text" data-reveal="right">
+          <span class="eyebrow" data-reveal="up">BIO</span>
+          <h2 data-reveal="up">MARK<br />KACHLEIN</h2>
+          <p data-reveal="up" style="color: rgb(141, 141, 141)">
+            I have spent a lifetime exploring the artistic process and have
+            been actively creating artwork for over 30 years. Specializing in
+            stone and steel sculpture, my work reflects a deep appreciation
+            for transformation—elevating raw materials into striking,
+            evocative forms. My sculptures have been exhibited and sold
+            through galleries, art auctions, fundraisers, and local business
+            venues. I also create work through private commissions.
+          </p>
+        </div>
+        <img alt="Art Sketch" class="bio-sketch" data-reveal="fade" src="assets/images/stack-sketch.webp"
+          style="--reveal-delay: 0.2s" />
+      </div>
+    </section>
+    <section class="section light language-section">
+      <div class="container language-layout">
+        <img alt="Art Sketch" class="language-sketch sketch-left" data-reveal="left"
+          src="assets/images/form-sketch-left.png" />
+        <div class="language-main">
+          <div class="language-heading-mobile">
+            <img alt="Art Sketch" class="language-sketch sketch-left-mobile" data-reveal="left"
+              src="assets/images/form-sketch-left.png" />
+            <h2 data-reveal="up">The Language<br />of <em>Form</em></h2>
+            <img alt="Art Sketch" class="language-sketch sketch-right-mobile" data-reveal="right"
+              src="assets/images/form-sketch-right.png" />
+          </div>
+          <h2 class="language-heading-desktop" data-reveal="up">
+            The Language<br />of <em>Form</em>
+          </h2>
+          <p data-reveal="up">
+            Since childhood, I’ve been captivated by the challenge of creating
+            three-dimensional forms inspired by my interpretations of the
+            world around me. As a young child, my efforts were pure play,
+            driven by the joy of turning one thing or idea into something
+            else. Later, as I deepened my studies and refined my skills, I
+            realized that my creative process is not just an act of
+            making—it’s a conversation between me, the materials, and the
+            world around me.
+          </p>
+          <p data-reveal="up" style="--reveal-delay: 0.1s">
+            Through this ongoing dialogue, I reinterpret what I observe and
+            feel, offering it back to the world with new hidden layers of
+            meaning, mystery, or humor.
+          </p>
+        </div>
+        <img alt="Art Sketch" class="language-sketch sketch-right" data-reveal="right"
+          src="assets/images/form-sketch-right.png" />
+        <div class="language-bottom">
+          <img alt="Art Sketch" class="language-sketch sketch-bottom" data-reveal="left"
+            src="assets/images/form-sketch-bottom.png" />
+          <div class="language-secondary" data-reveal="right">
+            <p data-reveal="up">
+              Today, as a Central Oregon artist specializing in steel and
+              stone sculpture, I draw inspiration from the rugged beauty of
+              the local landscape, the human form, and objects that hold
+              symbolic significance to me. These subjects often ignite my
+              curiosity and spark my creative process. I view my work as an
+              act of elevation—transforming the mundane, the rough, and the
+              simple into something extraordinary, imbued with a sense of
+              mystery and reverence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
   <footer class="site-footer">
-    <img src="assets/images/mk-logo-white.png" alt="MK Studio">
-    <nav><a href="index.html">HOME</a><a href="gallery.html">GALLERY</a><a href="contact.html">CONTACT</a></nav>
+    <img alt="MK Studio" src="assets/images/mk-logo-white.png" />
+    <nav>
+      <a href="index.html">HOME</a><a href="gallery.html">GALLERY</a><a href="contact.html">CONTACT</a>
+    </nav>
     <p><strong>Contact:</strong> mkachlein1527@msn.com</p>
     <p>Copyright © 2025 MKstudio. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    (() => {
+      if (document.body.classList.contains("archive-page")) return;
+
+      const revealItems = document.querySelectorAll("[data-reveal]");
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (reduceMotion) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+    })();
+  </script>
 </body>
 
 </html>
