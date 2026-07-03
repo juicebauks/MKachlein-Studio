@@ -65,7 +65,11 @@
 <body>
   <header class="site-header">
     <a class="logo" href="index.html"><img alt="MK Studio" src="assets/images/mk-logo-white.png" /></a>
-    <button aria-label="Open navigation" class="nav-toggle">☰</button>
+    <button aria-label="Open navigation" class="nav-toggle" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <nav class="site-nav">
       <a href="index.html">Home</a>
       <div class="dropdown">
@@ -214,15 +218,31 @@
 
       navToggle.addEventListener("click", () => {
         const isOpen = siteNav.classList.toggle("open");
+        navToggle.classList.toggle("active", isOpen);
+        document.body.classList.toggle("nav-open", isOpen);
         navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
       });
 
       siteNav.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
           siteNav.classList.remove("open");
+          navToggle.classList.remove("active");
+          document.body.classList.remove("nav-open");
           navToggle.setAttribute("aria-expanded", "false");
+          navToggle.setAttribute("aria-label", "Open navigation");
         });
       });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && siteNav.classList.contains("open")) {
+          siteNav.classList.remove("open");
+          navToggle.classList.remove("active");
+          document.body.classList.remove("nav-open");
+          navToggle.setAttribute("aria-expanded", "false");
+          navToggle.setAttribute("aria-label", "Open navigation");
+        }
+      });
+
     }
 
     if (document.body.classList.contains("archive-page")) return;
