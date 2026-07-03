@@ -694,28 +694,115 @@ a {
 
 @media (max-width: 760px) {
   .site-header {
-    height: auto;
+    height: 58px;
     min-height: 58px;
+    z-index: 1002;
+  }
+
+  body.nav-open {
+    overflow: hidden;
   }
 
   .nav-toggle {
+    display: flex;
+    position: relative;
+    z-index: 1003;
+    width: 34px;
+    height: 28px;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
     display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--white);
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  .nav-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   .site-nav {
-    display: none;
-    position: absolute;
-    top: 58px;
-    right: 0;
-    left: 0;
-    background: #111;
-    padding: 22px;
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    padding: 90px 24px 48px;
+    background: rgba(15, 16, 15, 0.97);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition:
+      opacity 0.35s ease,
+      visibility 0.35s ease,
+      transform 0.35s ease;
   }
 
   .site-nav.open {
-  display: flex;
-}
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .site-nav > a,
+  .site-nav .dropdown > a {
+    font-size: clamp(2rem, 10vw, 3.7rem);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .dropdown-menu {
+    display: flex;
+    position: static;
+    min-width: 0;
+    padding: 0;
+    background: transparent;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .dropdown-menu a {
+    padding: 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
+    color: rgba(245, 245, 241, 0.65);
+    text-transform: uppercase;
+  }
 
   .split,
   .contact-grid {
