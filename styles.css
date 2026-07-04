@@ -1148,7 +1148,6 @@ body.archive-page .scroll-reveal {
   transform: translate(0, 0);
 }
 
-
 /* Standardized responsive navigation */
 .side-menu {
   display: none;
@@ -1175,7 +1174,10 @@ body.archive-page .scroll-reveal {
     height: 58px;
     min-height: 58px;
     z-index: 1002;
-    transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
+    transition:
+      background 0.2s ease,
+      backdrop-filter 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .site-header:has(.side-menu:checked) {
@@ -1193,12 +1195,20 @@ body.archive-page .scroll-reveal {
     transition: opacity 0.35s ease;
   }
 
+  .desktop-link {
+    display: none;
+  }
+
+  .mobile-link {
+    display: block;
+  }
+
   .hamb {
     cursor: pointer;
     display: block;
     position: fixed;
     top: 16px;
-    right: 24px;
+    right: max(18px, env(safe-area-inset-right));
     z-index: 1003;
     width: 28px;
     height: 22px;
@@ -1226,69 +1236,105 @@ body.archive-page .scroll-reveal {
   .hamb-line::after {
     content: "";
     left: 0;
-    transition: top 0.25s ease, transform 0.25s ease;
+    transition:
+      top 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .hamb-line::before { top: -8px; }
-  .hamb-line::after { top: 8px; }
-
-  .desktop-link {
-    display: none;
+  .hamb-line::before {
+    top: -8px;
   }
 
-  .mobile-link {
-    display: block;
+  .hamb-line::after {
+    top: 8px;
   }
 
   .site-nav {
     position: fixed;
     inset: 0;
-    left: 0;
-    right: 0;
     z-index: 1001;
     width: 100%;
     max-width: 100%;
-    min-height: 100vh;
+    min-height: 100svh;
     overflow-x: hidden;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 36px;
+
     padding: 90px 24px 48px;
     background: rgba(15, 16, 15, 0.97);
-    backdrop-filter: blur(18px);
+
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: translateY(-12px);
-    transition: opacity 0.45s ease, visibility 0.45s ease, transform 0.45s ease;
+
+    transition:
+      opacity 0.75s ease,
+      visibility 0s linear 0.75s;
+    will-change: opacity;
   }
 
   .side-menu:checked ~ .site-nav {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateY(0);
+
+    transition:
+      opacity 0.7s ease,
+      visibility .7s ease;
   }
 
   .site-nav > a {
     opacity: 0;
-    transform: translateY(42px);
-    filter: blur(8px);
-    transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+    visibility: hidden;
+    transform: translate3d(0, 35px, 0);
+
+    font-size: clamp(2rem, 10vw, 3.7rem);
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0s linear 0.7s;
+    will-change: opacity, transform;
   }
 
   .side-menu:checked ~ .site-nav > a {
     opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+
+    transition:
+      opacity 1s ease,
+      transform 1s ease,
+      visibility 1s ease;
   }
 
-  .side-menu:checked ~ .site-nav > a:nth-of-type(1) { transition-delay: 0.08s; }
-  .side-menu:checked ~ .site-nav > a:nth-of-type(2) { transition-delay: 0.16s; }
-  .side-menu:checked ~ .site-nav > a:nth-of-type(3) { transition-delay: 0.24s; }
-  .side-menu:checked ~ .site-nav > a:nth-of-type(4) { transition-delay: 0.32s; }
+  .side-menu:checked ~ .site-nav > a:nth-of-type(1) {
+    transition-delay: 0.3s;
+  }
+
+  .side-menu:checked ~ .site-nav > a:nth-of-type(2) {
+    transition-delay: 0.42s;
+  }
+
+  .side-menu:checked ~ .site-nav > a:nth-of-type(3) {
+    transition-delay: 0.54s;
+  }
+
+  .side-menu:checked ~ .site-nav > a:nth-of-type(4) {
+    transition-delay: 0.66s;
+  }
+
+  .side-menu:not(:checked) ~ .site-nav > a {
+    transition-delay: 0s;
+  }
 
   .side-menu:checked ~ .hamb .hamb-line {
     background: transparent;
@@ -1303,17 +1349,7 @@ body.archive-page .scroll-reveal {
     top: 0;
     transform: rotate(-45deg);
   }
-
-  .site-nav > a,
-  .site-nav .dropdown > a {
-    font-size: clamp(2rem, 10vw, 3.7rem);
-    line-height: 1;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
 }
-
 
 /* Mobile horizontal overflow guard */
 @media (max-width: 760px) {
